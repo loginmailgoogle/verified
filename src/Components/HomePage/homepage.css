@@ -1,3 +1,6 @@
+.glavni {
+    width: 100%;
+}
 .sectionOne {
     display: flex;
     flex-direction: column;

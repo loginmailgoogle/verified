@@ -1,19 +1,18 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route} from "react-router-dom";
+import { BrowserRouter as Router} from "react-router-dom";
 import AllPage from "./Components/allpage";
-import ThankYou from "./Components/ThankYou/thankyou";
 
 function App() {
   return (
     <div className="App">
-        <Router>
-          <Routes>
-                <Route exact path="/verified" element={<AllPage />} />
-                <Route path="/thankyou" element={<ThankYou />} />
-            </Routes>
+        <Router path="/">
+          <AllPage/>
         </Router>
     </div>
   );
 }
 
 export default App;
+
+
+
